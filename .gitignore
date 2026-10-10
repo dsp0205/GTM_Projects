@@ -1,0 +1,22 @@
+﻿# Secrets & Environment variables
+.env
+*.env
+.env.*
+
+# Python virtual environment & cache
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Local databases & state
+*.duckdb
+*.duckdb.wal
+*.sqlite
+*.sqlite3
+*.db
+
+# Temporary and local OS files
+update_sub.py
+.DS_Store
+Thumbs.db
