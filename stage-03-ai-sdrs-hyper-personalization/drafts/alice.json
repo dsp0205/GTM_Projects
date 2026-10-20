@@ -1,0 +1,15 @@
+{
+  "status": "needs_review",
+  "prospect": "Alice Smith",
+  "to": "alice@example.com",
+  "hook": {
+    "claim": "Alice committed a change to acme/billing-api that split the integration tests into 4 shards to speed up CI.",
+    "quote": "alice committed to acme/billing-api: split integration tests into 4 shards to speed up CI",
+    "source_url": "https://github.com/acme/billing-api/commit/9f8c12a",
+    "relevance": "high"
+  },
+  "problems": [],
+  "subject": "Sharding billing-api integration tests",
+  "body": "Hi Alice,\n\nI noticed your commit to acme/billing-api that split the integration tests into 4 shards to speed up CI.\n\nI'm offering a free 20-minute audit of revenue automation workflows, and billing is one place where faster, more reliable pipelines tend to matter.\n\nWould it be useful if I took a look at yours? Happy to drop it if the timing is off.\n\nBest,\nJordan\n\nDeep Pimpale\nMumbai, India\nThis is a sales email. Not relevant? Reply 'stop' and I will not write again.",
+  "source_url": "https://github.com/acme/billing-api/commit/9f8c12a"
+}

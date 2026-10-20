@@ -1,0 +1,6 @@
+﻿[
+  {
+    "url": "https://github.com/acme/billing-api/commit/9f8c12a",
+    "text": "alice committed to acme/billing-api: split integration tests into 4 shards to speed up CI"
+  }
+]
