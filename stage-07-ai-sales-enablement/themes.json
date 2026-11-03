@@ -1,0 +1,228 @@
+[
+  {
+    "calls": 8,
+    "examples": [
+      {
+        "quote": "Not now. Come back in January when the new VP starts.",
+        "summary": "The buyer wants to postpone any decision until a new VP starts in January.",
+        "rep_response": "I understand. Let me send you a deck.",
+        "handled": "poorly",
+        "call_id": "call-002"
+      },
+      {
+        "quote": "Not now. Come back in January when the new VP starts.",
+        "summary": "The buyer wants to postpone any decision until January when a new VP starts.",
+        "rep_response": "I understand. Let me send you a deck.",
+        "handled": "poorly",
+        "call_id": "call-003"
+      },
+      {
+        "quote": "Not now. Come back in January when the new VP starts.",
+        "summary": "The buyer wants to postpone any decision until January when a new VP joins.",
+        "rep_response": "No problem. I will follow up next week.",
+        "handled": "poorly",
+        "call_id": "call-008"
+      },
+      {
+        "quote": "Not now. Come back in January when the new VP starts.",
+        "summary": "The buyer wants to delay any decision until a new VP starts in January.",
+        "rep_response": "Two customers had that concern. I can share what they did.",
+        "handled": "partly",
+        "call_id": "call-005"
+      },
+      {
+        "quote": "Thanks. We will think about it.",
+        "summary": "The buyer defers the decision without committing to a next step.",
+        "rep_response": "",
+        "handled": "not_addressed",
+        "call_id": "call-000"
+      },
+      {
+        "quote": "Thanks. We will think about it.",
+        "summary": "The buyer defers the decision without committing to a next step.",
+        "rep_response": "",
+        "handled": "not_addressed",
+        "call_id": "call-012"
+      },
+      {
+        "quote": "We are mid-reorg, so this has to wait until next fiscal year.",
+        "summary": "The buyer says the purchase must be delayed until next fiscal year because the company is in the middle of a reorganization.",
+        "rep_response": "Two customers had that concern. I can share what they did.",
+        "handled": "partly",
+        "call_id": "call-009"
+      },
+      {
+        "quote": "We are mid-reorg, so this has to wait until next fiscal year.",
+        "summary": "The buyer says an ongoing reorganization means the purchase must be delayed until next fiscal year.",
+        "rep_response": "No problem. I will follow up next week.",
+        "handled": "poorly",
+        "call_id": "call-006"
+      }
+    ]
+  },
+  {
+    "calls": 5,
+    "examples": [
+      {
+        "quote": "Another vendor showed us a cheaper bundle with the same features.",
+        "summary": "The buyer says a competing vendor offered a cheaper bundle with comparable features.",
+        "rep_response": "I understand. Let me send you a deck.",
+        "handled": "poorly",
+        "call_id": "call-000"
+      },
+      {
+        "quote": "Another vendor showed us a cheaper bundle with the same features.",
+        "summary": "The buyer says a competing vendor offered a cheaper bundle with comparable features.",
+        "rep_response": "No problem. I will follow up next week.",
+        "handled": "poorly",
+        "call_id": "call-010"
+      },
+      {
+        "quote": "Another vendor showed us a cheaper bundle with the same features.",
+        "summary": "The buyer says a competing vendor offered a cheaper bundle with equivalent features.",
+        "rep_response": "Two customers had that concern. I can share what they did.",
+        "handled": "poorly",
+        "call_id": "call-012"
+      },
+      {
+        "quote": "Your price is about double what we pay today.",
+        "summary": "The buyer says the price is roughly twice what they currently pay.",
+        "rep_response": "I understand. Let me send you a deck.",
+        "handled": "poorly",
+        "call_id": "call-003"
+      },
+      {
+        "quote": "Your price is about double what we pay today.",
+        "summary": "The buyer says the price is roughly twice what they currently pay.",
+        "rep_response": "No problem. I will follow up next week.",
+        "handled": "poorly",
+        "call_id": "call-005"
+      }
+    ]
+  },
+  {
+    "calls": 5,
+    "examples": [
+      {
+        "quote": "We are also looking at Gong, and they have the bigger name.",
+        "summary": "The buyer is evaluating Gong as a competitor and sees it as the better-known brand.",
+        "rep_response": "I understand. Let me send you a deck.",
+        "handled": "poorly",
+        "call_id": "call-004"
+      },
+      {
+        "quote": "We are also looking at Gong, and they have the bigger name.",
+        "summary": "The buyer is evaluating Gong as a competitor and sees it as having a stronger brand name.",
+        "rep_response": "Two customers had that concern. I can share what they did.",
+        "handled": "partly",
+        "call_id": "call-008"
+      },
+      {
+        "quote": "We are also looking at Gong, and they have the bigger name.",
+        "summary": "The buyer is evaluating Gong, a competitor, and sees it as having stronger brand recognition.",
+        "rep_response": "No problem. I will follow up next week.",
+        "handled": "poorly",
+        "call_id": "call-009"
+      },
+      {
+        "quote": "We are also looking at Gong, and they have the bigger name.",
+        "summary": "The buyer is also evaluating Gong and sees it as the stronger brand.",
+        "rep_response": "I understand. Let me send you a deck.",
+        "handled": "poorly",
+        "call_id": "call-014"
+      },
+      {
+        "quote": "We are also looking at Gong, and they have the bigger name.",
+        "summary": "The buyer says they are also evaluating Gong and sees it as the better-known brand.",
+        "rep_response": "No problem. I will follow up next week.",
+        "handled": "not_addressed",
+        "call_id": "call-011"
+      }
+    ]
+  },
+  {
+    "calls": 5,
+    "examples": [
+      {
+        "quote": "Finance says the annual commit is too high for us.",
+        "summary": "The buyer says finance considers the annual commitment too expensive.",
+        "rep_response": "Two customers had that concern. I can share what they did.",
+        "handled": "partly",
+        "call_id": "call-006"
+      },
+      {
+        "quote": "Finance says the annual commit is too high for us.",
+        "summary": "The buyer says finance considers the annual commitment too expensive.",
+        "rep_response": "No problem. I will follow up next week.",
+        "handled": "poorly",
+        "call_id": "call-009"
+      },
+      {
+        "quote": "Finance says the annual commit is too high for us.",
+        "summary": "The buyer says finance considers the annual commitment too expensive.",
+        "rep_response": "I understand. Let me send you a deck.",
+        "handled": "poorly",
+        "call_id": "call-010"
+      },
+      {
+        "quote": "Finance says the annual commit is too high for us.",
+        "summary": "The buyer says finance considers the annual commitment too expensive for their company.",
+        "rep_response": "I understand. Let me send you a deck.",
+        "handled": "poorly",
+        "call_id": "call-001"
+      },
+      {
+        "quote": "Finance says the annual commit is too high for us.",
+        "summary": "The buyer said their finance team considers the annual commitment too expensive.",
+        "rep_response": "No problem. I will follow up next week.",
+        "handled": "poorly",
+        "call_id": "call-007"
+      }
+    ]
+  },
+  {
+    "calls": 3,
+    "examples": [
+      {
+        "quote": "Our security team needs SOC 2 Type II before we sign.",
+        "summary": "The buyer says their security team requires SOC 2 Type II compliance before they can sign.",
+        "rep_response": "I understand. Let me send you a deck.",
+        "handled": "poorly",
+        "call_id": "call-000"
+      },
+      {
+        "quote": "Our security team needs SOC 2 Type II before we sign.",
+        "summary": "The buyer says their security team requires SOC 2 Type II compliance before they can sign.",
+        "rep_response": "I understand. Let me send you a deck.",
+        "handled": "poorly",
+        "call_id": "call-013"
+      },
+      {
+        "quote": "Our security team needs SOC 2 Type II before we sign.",
+        "summary": "The buyer requires SOC 2 Type II compliance before signing.",
+        "rep_response": "I understand. Let me send you a deck.",
+        "handled": "not_addressed",
+        "call_id": "call-004"
+      }
+    ]
+  },
+  {
+    "calls": 2,
+    "examples": [
+      {
+        "quote": "Where is call data stored, and can we choose the region?",
+        "summary": "The buyer asks where call data is stored and whether they can choose the region, which signals a data residency concern.",
+        "rep_response": "Two customers had that concern. I can share what they did.",
+        "handled": "poorly",
+        "call_id": "call-011"
+      },
+      {
+        "quote": "Where is call data stored, and can we choose the region?",
+        "summary": "The buyer asks where call data is stored and whether they can choose the region, which signals a data residency concern.",
+        "rep_response": "Two customers had that concern. I can share what they did.",
+        "handled": "poorly",
+        "call_id": "call-012"
+      }
+    ]
+  }
+]
