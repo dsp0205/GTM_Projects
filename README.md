@@ -10,6 +10,8 @@ The repository contains 11 project stages and 3 product teardowns developed thro
 
 ## Featured Projects
 
+These four projects cover the core GTM engineering areas I focused on: data foundations, product signals, revenue attribution and customer retention.
+
 ### 1. Reverse ETL & Data Architecture
 [Explore the project](./stage-01-gtm-data-architecture-reverse-etl)
 
@@ -22,17 +24,16 @@ A data pipeline that transforms billing and product-usage data into CRM-ready re
 
 **Stack:** Python, SQL, DuckDB, Flask, Stripe API, HubSpot API.
 
-### 2. AI SDR & Prospect Personalization
-[Explore the project](./stage-03-ai-sdrs-hyper-personalization)
+### 2. Product-Led Telemetry & Scoring
+[Explore the project](./stage-04-plg-telemetry)
 
-An AI-assisted outbound workflow that uses public prospect activity to identify relevant signals and generate personalized email drafts.
+A product analytics workflow that turns user activity into account-level fit and engagement signals for product-qualified lead (PQL) scoring.
 
-- Retrieves recent public GitHub activity as prospect context.
-- Uses structured LLM outputs to extract specific, source-backed observations.
-- Verifies generated claims against the original evidence and drops unsupported hooks.
-- Produces personalized drafts for human review rather than sending outreach automatically.
+- Processes product events and handles duplicate events.
+- Combines account fit with product usage to prioritize qualified accounts.
+- Applies scoring logic to make product engagement useful for sales follow-up.
 
-**Stack:** Python, Anthropic API, GitHub API, structured JSON outputs.
+**Stack:** Python, SQLite, product event data, scoring logic.
 
 ### 3. Multi-Touch Revenue Attribution
 [Explore the project](./stage-06-revops-attribution)
@@ -46,6 +47,17 @@ A revenue analytics project comparing different ways of assigning credit to mark
 - Compared attribution outputs against holdout experiments.
 
 **Stack:** Python, SQL, DuckDB, Pandas, NumPy.
+
+### 4. Predictive Churn & Expansion
+[Explore the project](./stage-08-predictive-churn-expansion)
+
+A customer analytics workflow that uses account-level signals to identify churn risk and prioritize retention or expansion opportunities.
+
+- Builds a predictive model using customer and product-usage signals.
+- Ranks accounts by churn risk to support focused customer-success action.
+- Evaluates prioritization performance over a defined prediction window.
+
+**Stack:** Python, scikit-learn, Pandas, customer and product-usage data.
 
 ---
 
