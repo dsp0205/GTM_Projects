@@ -23,7 +23,7 @@ A data pipeline that transforms billing and product-usage data into CRM-ready re
 **Stack:** Python, SQL, DuckDB, Flask, Stripe API, HubSpot API.
 
 ### 2. AI SDR & Prospect Personalization
-[Explore the project](./stage-03-ai-sdr-hyper-personalization)
+[Explore the project](./stage-03-ai-sdrs-hyper-personalization)
 
 An AI-assisted outbound workflow that uses public prospect activity to identify relevant signals and generate personalized email drafts.
 
@@ -65,7 +65,7 @@ A revenue analytics project comparing different ways of assigning credit to mark
 
 | Project | What it covers |
 |---|---|
-| [Stage 03 · AI SDR Hyper-Personalization](./stage-03-ai-sdr-hyper-personalization) | Prospect research, evidence validation and personalized outbound drafts |
+| [Stage 03 · AI SDR Hyper-Personalization](./stage-03-ai-sdrs-hyper-personalization) | Prospect research, evidence validation and personalized outbound drafts |
 | [Stage 07 · AI Sales Enablement](./stage-07-ai-sales-enablement) | Call transcript analysis, objection clustering and RAG-based battle cards |
 | [Stage 08 · Predictive Churn & Expansion](./stage-08-predictive-churn-expansion) | Churn-risk modelling and renewal-focused account prioritization |
 | [Stage 11 · Automated QBR Engine](./stage-11-automated-qbr) | Automated PowerPoint generation with deterministic metrics and review controls |
