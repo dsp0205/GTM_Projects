@@ -1,76 +1,114 @@
-# GTM Engineering & Revenue Architecture Portfolio
-Production-grade Go-To-Market infrastructure, data pipelines, and reverse ETL architectures.
+# GTM Engineering & Revenue Systems Portfolio
+
+I build systems at the intersection of go-to-market strategy, data, automation and AI. This portfolio brings together hands-on projects across revenue data architecture, CRM integrations, sales automation, product-led growth, attribution and customer analytics.
+
+My background spans strategy, operations and AI. I enjoy taking a business problem, understanding the systems behind it, and building a practical technical solution.
+
+The repository contains 11 project stages and 3 product teardowns developed through hands-on implementation. The projects include working code and test coverage, with sample or synthetic data used where appropriate.
 
 ---
 
-## 1. Executive Summary & Market Findings
-Based on automated ATS audits across Tier-1 AI companies (OpenAI, Anthropic, Ramp, Clay, Cursor), modern revenue engineering roles prioritize:
-* **Production Data Engineering:** Strict idempotency, atomic deduplication, and schema validation over ad-hoc scripting.
-* **Commercial Systems Judgment:** Balancing customer UX against API inference costs (rate limiting, credit pools, realization haircuts).
-* **Defensible Metrics:** Rejecting ungrounded AI summaries in favor of verifiable facts.
+## Featured Projects
+
+### 1. Reverse ETL & Data Architecture
+[Explore the project](./stage-01-gtm-data-architecture-reverse-etl)
+
+A data pipeline that transforms billing and product-usage data into CRM-ready records and syncs changes to HubSpot.
+
+- Built data models using SQL and DuckDB to combine Stripe billing and product usage.
+- Implemented SHA-256 row hashing to detect changes and avoid unnecessary CRM updates.
+- Added batched HubSpot upserts with retry handling for API rate limits.
+- Built a Stripe webhook receiver with signature verification and duplicate-event protection.
+
+**Stack:** Python, SQL, DuckDB, Flask, Stripe API, HubSpot API.
+
+### 2. AI SDR & Prospect Personalization
+[Explore the project](./stage-03-ai-sdr-hyper-personalization)
+
+An AI-assisted outbound workflow that uses public prospect activity to identify relevant signals and generate personalized email drafts.
+
+- Retrieves recent public GitHub activity as prospect context.
+- Uses structured LLM outputs to extract specific, source-backed observations.
+- Verifies generated claims against the original evidence and drops unsupported hooks.
+- Produces personalized drafts for human review rather than sending outreach automatically.
+
+**Stack:** Python, Anthropic API, GitHub API, structured JSON outputs.
+
+### 3. Multi-Touch Revenue Attribution
+[Explore the project](./stage-06-revops-attribution)
+
+A revenue analytics project comparing different ways of assigning credit to marketing and sales touchpoints.
+
+- Implemented first-touch, last-touch, linear, U-shaped and time-decay attribution in SQL.
+- Built Markov removal-effect and Shapley-value models in Python.
+- Generated account, contact, touchpoint and opportunity data to test attribution approaches.
+- Added funnel and cohort analysis with a locally generated HTML dashboard.
+- Compared attribution outputs against holdout experiments.
+
+**Stack:** Python, SQL, DuckDB, Pandas, NumPy.
 
 ---
 
-## 2. Technical Course Projects (Stages 1 - 11)
+## Project Portfolio
 
-### [Stage 01: Reverse ETL & Data Architecture](../stage-01-gtm-data-architecture-reverse-etl)
-* **Problem:** Direct database-to-CRM syncing creates API rate limit exhaustion and sync thrashing.
-* **Metric:** 100% change-only synchronization via SHA-256 state hashing; zero redundant HubSpot API calls.
-* **Tradeoff:** Used DuckDB persistent hashing instead of webhook listeners to guarantee deterministic replayability.
+### Revenue Data & Automation
 
-### [Stage 02: HMAC Intent Pipelines](../stage-02-signal-intent-pipelines)
-* **Problem:** Inbound webhooks from intent providers are vulnerable to spoofing and noisy duplicate signals.
-* **Metric:** 100% cryptographic HMAC-SHA256 signature verification with rolling 7-day alert debounce windows.
-* **Tradeoff:** Discarded sub-threshold signals early in memory to protect database connection pools.
+| Project | What it covers |
+|---|---|
+| [Stage 01 · Reverse ETL & Data Architecture](./stage-01-gtm-data-architecture-reverse-etl) | Billing data models, change detection, HubSpot sync and Stripe webhooks |
+| [Stage 02 · HMAC Intent Pipelines](./stage-02-signal-intent-pipelines) | Webhook signature verification, intent signals and deduplication |
+| [Stage 04 · Product-Led Telemetry Scoring](./stage-04-plg-telemetry) | Product event processing, account fit and usage-based PQL scoring |
+| [Stage 05 · Usage-Based Credit Architecture](./stage-05-usage-based-pricing) | Usage metering, credit ledgers, promotional balances and compute limits |
+| [Stage 09 · Integration-Led Growth](./stage-09-integration-led-growth) | Slack OAuth, PKCE, encrypted token storage and activation tracking |
 
-### [Stage 03: AI SDR Hyper-Personalization](../stage-03-ai-sdr-hyper-personalization)
-* **Problem:** LLM-generated outbound emails hallucinate company claims and trigger deliverability penalties.
-* **Metric:** Strict Pydantic JSON schema outputs with an automated quote-or-drop verification pass.
-* **Tradeoff:** Dropped non-verifiable prospect claims instead of attempting automated prompt correction.
+### AI, Sales & Customer Operations
 
-### [Stage 04: Product-Led Telemetry Scoring](../stage-04-plg-telemetry)
-* **Problem:** Segment event volume overwhelms CRM record limits with irrelevant low-intent actions.
-* **Metric:** Atomic SQLite event deduplication pairing Fit (firmographic) and Usage (consumption velocity) scoring.
-* **Tradeoff:** Implemented sliding 14-day decay windows over all-time event counters to surface active PQLs.
+| Project | What it covers |
+|---|---|
+| [Stage 03 · AI SDR Hyper-Personalization](./stage-03-ai-sdr-hyper-personalization) | Prospect research, evidence validation and personalized outbound drafts |
+| [Stage 07 · AI Sales Enablement](./stage-07-ai-sales-enablement) | Call transcript analysis, objection clustering and RAG-based battle cards |
+| [Stage 08 · Predictive Churn & Expansion](./stage-08-predictive-churn-expansion) | Churn-risk modelling and renewal-focused account prioritization |
+| [Stage 11 · Automated QBR Engine](./stage-11-automated-qbr) | Automated PowerPoint generation with deterministic metrics and review controls |
 
-### [Stage 05: Usage-Based Credit Architecture](../stage-05-usage-based-pricing)
-* **Problem:** Overdrafts in usage-based SaaS lead to uncollectible bills and margin loss.
-* **Metric:** ACID-compliant balance ledger spending expiring promotional grants before paid balances.
-* **Tradeoff:** Enforced hard compute caps at balance depletion rather than allowing unmetered debt.
+### Revenue Intelligence & Attribution
 
-### [Stage 06: Multi-Touch RevOps Attribution](../stage-06-revops-attribution)
-* **Problem:** First-touch and last-touch attribution models misallocate marketing budget.
-* **Metric:** Built 5 rule-based models alongside Shapley Value and Markov Removal Effect algorithms.
-* **Tradeoff:** Validated synthetic paths against randomized holdout baselines to prevent self-fulfilling model bias.
-
-### [Stage 07: AI Sales Enablement & Objection Battle Cards](../stage-07-ai-sales-enablement)
-* **Problem:** Sales reps fail objection handling due to generic marketing collateral.
-* **Metric:** Parsed lost-call transcripts, clustered themes via ChromaDB, and generated RAG battle cards.
-* **Tradeoff:** Grounded proof points in verified ground-truth fact IDs; rejected ungrounded rep assertions.
-
-### [Stage 08: Predictive Churn & Expansion Flagger](../stage-08-predictive-churn-expansion)
-* **Problem:** Churn notifications arrive after the contract cancellation notice window closes.
-* **Metric:** HistGradientBoosting classifier achieving 0.88 precision@25 evaluated 45 days prior to renewal.
-* **Tradeoff:** Implemented a strict 45-day temporal gap split between train and test sets to eliminate data leakage.
-
-### [Stage 09: Integration-Led Growth Slack OAuth App](../stage-09-integration-led-growth)
-* **Problem:** OAuth tokens stored in plaintext create security vulnerabilities and refresh collisions.
-* **Metric:** Built an RFC 7636 PKCE OAuth client with Fernet encryption and SQLite BEGIN IMMEDIATE locks.
-* **Tradeoff:** Maintained minimal permission scopes (commands only) to pass Marketplace security reviews.
-
-### [Stage 10: Dark Social & Community Attribution](../stage-10-dark-social-community)
-* **Problem:** Software attribution attributes peer recommendations to 'Direct' or 'Organic Search'.
-* **Metric:** Coded free-text HDYHAU responses (Cohen's kappa = 1.00) and ran 2,000-sample bootstrap lift tests.
-* **Tradeoff:** Adjusted raw word-of-mouth lift against company size bands, exposing that 68% of lift was confounded.
-
-### [Stage 11: The Automated QBR Presentation Engine](../stage-11-automated-qbr)
-* **Problem:** CSMs spend hours building QBR slides, while unconstrained LLMs hallucinate business metrics.
-* **Metric:** Generated 16:9 PowerPoint decks with native editable charts and a mandatory review gate.
-* **Tradeoff:** Enforced a zero-digit generation rule for LLMs; all math was computed in deterministic Python.
+| Project | What it covers |
+|---|---|
+| [Stage 06 · Multi-Touch RevOps Attribution](./stage-06-revops-attribution) | Rule-based attribution, Markov models, Shapley values and funnel analysis |
+| [Stage 10 · Dark Social & Community Attribution](./stage-10-dark-social-community) | Self-reported attribution, response coding and incremental lift analysis |
 
 ---
 
-## 3. Public Teardowns
-1. [Cursor Credit Pools & Stealth Tiers](teardowns/01_cursor_credit_pools.md)
-2. [Lovable Asymmetric Credit Pricing](teardowns/02_lovable_dynamic_credits.md)
-3. [Claude Rolling 5-Hour Session Windows](teardowns/03_claude_usage_windows.md)
+## Product & Pricing Teardowns
+
+These teardowns look at how AI and SaaS products structure usage, pricing and monetization.
+
+1. [Cursor · Credit Pools & Usage Tiers](./stage-12-teardowns-portfolio/teardowns/01_cursor_credit_pools.md)
+2. [Lovable · Asymmetric Credit Pricing](./stage-12-teardowns-portfolio/teardowns/02_lovable_dynamic_credits.md)
+3. [Claude · Rolling Usage Windows](./stage-12-teardowns-portfolio/teardowns/03_claude_usage_windows.md)
+
+---
+
+## Technical Toolkit
+
+- **Languages:** Python, SQL
+- **Data & storage:** DuckDB, SQLite, Pandas, NumPy
+- **Integrations:** REST APIs, webhooks, OAuth, Stripe, HubSpot, Slack, GitHub
+- **AI workflows:** LLM APIs, structured outputs, evidence validation, RAG and prompt design
+- **GTM systems:** CRM data sync, lead signals, outbound personalization, product analytics, attribution and customer retention
+- **Outputs:** HTML dashboards, automated PowerPoint reports and data pipelines
+
+---
+
+## How I Approach GTM Engineering
+
+I look at GTM engineering as more than connecting tools. The work starts with understanding the business process and the data behind it, then designing systems that make the process more reliable and measurable.
+
+Across these projects, I focus on:
+
+- **Reliable data movement:** validation, deduplication, idempotency and API failure handling.
+- **Useful automation:** workflows that reduce manual work without removing necessary human review.
+- **Commercial context:** connecting product usage, customer signals and revenue outcomes.
+- **Measurable decisions:** making assumptions visible and testing models against defined data.
+
+Each project folder contains the implementation files and supporting material. The repository is intended to be explored project by project.
